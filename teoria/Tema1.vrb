@@ -1,0 +1,33 @@
+\frametitle{Números complejos}
+\protect\hypertarget{nuxfameros-complejos-2}{}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{z }\OtherTok{=} \DecValTok{2}\SpecialCharTok{+}\NormalTok{3i}
+\NormalTok{z2 }\OtherTok{=} \FunctionTok{complex}\NormalTok{(}\AttributeTok{real =} \DecValTok{2}\NormalTok{, }\AttributeTok{imaginary =} \SpecialCharTok{{-}}\DecValTok{3}\NormalTok{)}
+\FunctionTok{Re}\NormalTok{(z)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{Im}\NormalTok{(z)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{Conj}\NormalTok{(z2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 2+3i
+\end{verbatim}

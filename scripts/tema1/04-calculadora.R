@@ -17,73 +17,82 @@
 725%/%7
 
 725%%7
+# Algoritmo de Euclides
 # D = d * q + r
 # r = D - d * q
 # q = D %/% d
 # x = D %% d 
+
 725 - 103*7
 
 pi
-
+# No olvidarse de poner el * para la multiplicación, si no sale error
 2*pi
 
 3^pi
 
 pi^2
 
+# Infinito
 Inf
-
 -Inf
 
+# Valor desconocido (Not Available)
 NA
-
+# Not a Number
 NaN
 
 5/0
-
 0/0
 
-2^50# = 1.1259e+15 = 1125900000000000 
+# Interpretar los numeros como notación cientifica
 
+2^50 # = 1.1259e+15 = 1125900000000000 
 2 ^(-15) # 3.051758e-05 = 0.00003051758
 
+# Vector
 c(2^30, 2^(-15), 1, 2, 3/2)
 
-
+# Raíz cuadrada
 sqrt(25)
 
+# Exponencial (Numero e)
 exp(1)
 
 log(pi)
-
+# (operando, base)
 log(32, 2)
-
 log(32, base = 2)
 log(base=2, 32)
 
+# Valor absoluto
 abs(-pi)
 
+# Factorial
 factorial(7)
-
 factorial(4)
-
 factorial(0)
 
-choose(5, 3)
-
+# Combinaciones Ordenar n elementos tomados de m (n m)
+choose(5,3)
 choose(3,5)
 
+# Operaciones opuestas de logaritmos
 log(4^6, 4)
-
 6^log(4,6)
 
-choose(5,2)
+choose(5,4)
 
+# Las funciones trigonometricas vienen en radianes
+
+#esto para pasar a grados 
+# seno
 sin(60*pi/180)
-
+# coseno
 cos(60*pi/180)
 
 sinpi(1/2) # = sin (pi/2)
+cos(pi)
 
 tan(pi) # -1.224647e-16 ~ 0
 
@@ -93,24 +102,32 @@ asin(0.8660254) #arc sin en radianes
 
 asin(0.8660254) * 180 /pi #arc sin en grados
 
+#no existen arcos de numeros mayores a 1 y -1
 asin(5) #arc sin x in [-1,1]
 
 acos(-8)
 
-print(sqrt(2),10)
+# Muestra las n cifras significativas del número X print(x,n)
+print(sqrt(2),5)
+# Redondea a n cifras significativas un resultado o vector numérico
 round(sqrt(2), 3)
+# Parte entera por defecto de x
 floor(sqrt(2))
+# Parte entera por exceso de x 
 ceiling(sqrt(2))
+# Parte entera de x, eliminando la parte decimal
 trunc(sqrt(2))
 
+# Errores de redondeo y manipulación algebraica
 sqrt(2)^2-2
-
+# 
 round(sqrt(2), 4)^2
 
 2^50
 print(2^50, 15)
 print(2^50, 2)
 print(pi, 22)
+# noo pedir a R mas de 16 dígitos decimales
 #3.141592653589793115998
 #3.141592653589793238462
 
@@ -127,7 +144,7 @@ floor(-3.45)
 ceiling(-3.45)
 trunc(-3.45)
 
-
+# Creación de variables
 x = (pi^2)/2
 x
 
@@ -137,7 +154,7 @@ y
 sin(pi/4) + cos(pi/4) -> z
 z
 
-edad <- 30
+edad <- 30 
 
 nombre = "Juan Gabriel"
 
@@ -151,7 +168,7 @@ x = 2
 x = x^2
 
 x = sqrt(x)
-
+# Como crear funciones en R
 ## Función f(x) = x^3 - (3^x)* sen(x)
 f = function(x) {
   x^3 - (3^x) * sin(x)
@@ -187,13 +204,13 @@ suma5 <- function(numero){
 }
 
 suma5(3)
-
+# Para listar todas las variables y funciones que fueron creadas
 ls()
-
+# Para borrar funciones o variables
 rm(product)
 
 ls()
-
+# Para borrar todo, también se puede usar la escobita que esta arriba de las variables 
 rm(list = ls())
 
 class(3+2i)
