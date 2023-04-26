@@ -213,6 +213,7 @@ ls()
 # Para borrar todo, también se puede usar la escobita que esta arriba de las variables 
 rm(list = ls())
 
+# Números complejos
 class(3+2i)
 
 (3+2i)*5
@@ -227,8 +228,9 @@ class(3+2i)
 #pi + sqrt(2)i
 complex(real = pi, imaginary = sqrt(2)) -> z1
 z1
+# Esto es un error
+# sqrt(-5)
 
-sqrt(-5)
 sqrt(as.complex(-5))
 
 #La raíz cuadrada devuelve, de las dos soluciones la de
@@ -241,6 +243,7 @@ cos(3+2i)
 #Módulo = sqrt(Re(z)^2 + Im(z)^2)
 Mod(z1)
 #Argumento = arctan(Im(z)/Re(z))
+# es lo mismo que hacer 
 # = arccos(Re(z)/Mod(z))
 # = arcsin(Im(z)/Mod(z))
 # va de (-pi, pi]
