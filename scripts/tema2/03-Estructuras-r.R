@@ -99,12 +99,16 @@ diff(cumsum(x))
 sort(x)
 rev(x)
 sort(x, decreasing = TRUE)
+
 # Ejercicios
 x = c(1,7,5,2,4,6,3)
 ordena = function(x){ rev(sort(x))}
 ordena(x)
 ordenar = function(x){ sort(rev(x))}
 ordenar(x)
+
+# Subvectores
+
 
 
 
