@@ -108,6 +108,183 @@ ordenar = function(x){ sort(rev(x))}
 ordenar(x)
 
 # Subvectores
+# Trabajar con partes del vector
+x = seq(3, 50, by = 3.5)
+x
+# Para obtener una posicion del vector
+x[3]
+x[8]
+# la ultima posición
+x[length(x)]
+# el vector menos la posicion 3
+x[-3]
+# posición del 4 al 8
+x[4:8]
+# posición del 8 al 4
+x[8:4]
+# los de indice pares
+x[seq(2, length(x), by = 2)]
+# para los indices impares
+x[seq(1, length(x), by = 2)]
+# de otra forma para impares
+x[-seq(2, length(x), by = 2)]
+# los ultimos 4 elementos del vector x
+x[(length(x)-3):length(x)]
+# Hay que tener cuidado con los parentesis de esta forma sale cualquier otra cosa
+# Sales menos los últimos 3 elementos del vector
+x[length(x)-3:length(x)]
+x[c(1,5,6)]
+# Todos los elementos mayores a 30
+x[x>30]
+x[x>20 & x<40]
+x[ x!=3 & x!=17]
+x[x<10 | x>40]
+x[x>=10]
+x[!x<10]
+# Los elementos pares
+x[x%%2==0]
+# Los elementos impares
+x[x%%2==1]
+# Hay que tener cuidado con esto nos sale solo elementos booleanos true y false
+x>30
+# es distinto a hacer
+x[x>30]
+x = c(1,7,4,2,4,8,9,2,0)
+y = c(5,2,-3,-7,-1,4,-2,7,1)
+# elementos de y que sean mayores a 0
+x[y>0]
+# Esto obitnen los indices de las entradas que cumplan una determinanda condición
+which(x>4)
+# Esto si da los elementos
+x[which(x>4)]
+x[x>4]
+which(x>2 & x<8)
+x[which(x<5 | x%%2==0)]
+which(x%%2==0)
+which.min(x)
+which(x==min(x))
+which.max(x)
+which(x == max(x))
+fix(x)
+# cuando no existen elementos en el vector x
+x[x>4 & x<7]
+which(x>4 & x<7)
+x = c()
+x
+y = NULL
+y# si declaramos variables que no existen no salen en los elementos del vector
+z = c(x, 2, y, 7)
+z
+2^pi > pi^2
+2^pi
+pi^2
+12345678%%9 == 0
+12345678/9
+length(1:100) > 4 
+length(1:100) > 400
+x = 1:10
+x[3]
+x[3] = 32
+x
+# Cuando pedimos un elemento que no existe en el vector nos devuelve NA
+x[11]
+x[11] = 15
+x
+x[2:5] = x[2:5] + 3
+x
+# le asigna 0 a las ultimas 3 posiciones
+x[(length(x)-2):length(x)] = 0
+x
+# Se llena la posición 15 con el número 9 los demás con NA
+x[length(x) + 5 ] = 9
+x
+sum(x)
+prod(x)
+cumsum(x)
+mean(x)
+sum(x)
+sum(x, na.rm = TRUE)
+mean(x, na.rm = TRUE)
+which(x == NA)
+is.na(x)
+# posiciones donde tenemos NA
+which(is.na(x))
+x[which(is.na(x))]
+# parareemplazar en estadistica descriptiva se reemplaza por la media
+y = x
+y
+y[is.na(y)]
+y[is.na(y)] = mean(y, na.rm=TRUE)
+y
+# Para obtener los elementos que no son NA
+x[!is.na(x)]
+sum(x[!is.na(x)])
+cumsum(x)
+# ERROR
+cumsum(x, na.rm = TRUE)
+cumsum(x[!is.na(x)])
+x
+na.omit(x)
+x
+sum(na.omit(x))
+cumsum(na.omit(x))
+x_clean = na.omit(x)
+x_clean
+# son esto se elimna los lementos NA
+attr(x_clean, "na.action") = NULL
+x_clean
+attr(x_clean, "class") = NULL
+x_clean
+### FACTORES
+nombres = c("Juan", "Antonio", "Ricardo", "Juan", "Juan", "Maria", "Maria")
+nombres
+nombres.factor = factor(nombres)
+nombres.factor
+gender = c("M", "H", "H", "M", "M", "M", "M", "H", "H")
+gender.fact = factor(gender)
+gender.fact
+gender.fact2 = as.factor(gender)
+gender.fact2
+gender.fact3 = factor(gender, levels = c("M", "H", "B"))
+gender.fact3
+gender.fact4 = factor(gender, levels = c("M", "H", "B"), labels = c("Mujer", "Hombre", "Hermafrodita"))
+gender.fact4
+levels(gender.fact)
+gender.fact4
+levels(gender.fact4)
+levels(gender.fact4) = c("Femenino", "Masculino", "Hibrido")
+gender.fact4
+notas = c(1,4,3,2,3,2,4,3,1,2,3,4,2,3,4)
+notas
+notas.factor = factor(notas)
+notas.factor
+levels(notas.factor)
+levels(notas.factor) = c("Suspendido", "Suficiente", "Notable", "Excelente")
+notas.factor
+notas
+levels(notas.factor) = c("Suspendido", "Aprobado", "Aprobado", "Aprobado")
+notas.factor
+notas
+ordered(notas, labels = c("Sus", "Suf", "Not", "Exc"))
+### LISTAS
+x = c(1,5,-2,6,-7,8,-3,4,-9)
+x
+L = list(nombre = "temperaturas", datos = x, media = mean(x), sumas = cumsum(x))
+L
+L$media
+L$datos
+L[[3]]
+L[[2]]
+str(L)
+
+
+
+
+
+
+
+
+
 
 
 
