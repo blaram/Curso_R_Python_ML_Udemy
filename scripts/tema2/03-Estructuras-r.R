@@ -276,7 +276,55 @@ L$datos
 L[[3]]
 L[[2]]
 str(L)
-
+## Ejemplo de modelo lineal
+summary(lm(c(1,2,3,4) ~ c(1,2,3,6)))
+reg <- (lm(c(1,2,3,4) ~ c(1,2,3,6)))
+reg$coefficients
+names(L)
+### MATRICES
+M = matrix(1:12, nrow = 4)
+M
+M = matrix(1:12, nrow = 4, byrow = T)
+M
+M = matrix(1:12, nrow = 3)
+M
+M = matrix(1:12, nrow = 5)
+M
+matrix(1, nrow = 4, ncol = 6)
+# Ejercicios
+M = matrix(0, nrow = 3, ncol = 5)
+M
+vec = c(1,2,3,4,5,6,7,8,9,10,11,12)
+R = matrix(vec, nrow = 3)
+R
+M
+### Continua la clase
+rbind(M, c(1,2,3), c(-1,-2,-3))
+cbind(M, c(1,2,3,4,5), c(1,2,3,4,5))
+diag(c(1,2,3,4,5))
+# Submatrices
+M[2,3]
+M[2,]
+M[,3]
+M[c(2,3,5), 1:2]
+# Funciones de matrices
+nrow(M)
+ncol(M)
+dim(M)
+sum(M)
+prod(M)
+diag(M)
+colSums(M)
+rowSums(M)
+colMeans(M)
+# FILAS
+apply(M, MARGIN = 1, FUN = function(x){sqrt(sum(x^2))})
+# COLUMNAS
+apply(M, MARGIN = 2, FUN = function(x){sqrt(sum(x^2))})
+apply(M, MARGIN = 2, FUN = function(x){x^2})
+# Transpuiesta de una matriz
+t(M)
+M%*%t(M)
 
 
 
