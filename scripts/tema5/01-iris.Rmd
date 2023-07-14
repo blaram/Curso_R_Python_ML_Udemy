@@ -1,9 +1,9 @@
 ---
 title: "R Notebook"
 output:
-  pdf_document: default
   html_document:
     df_print: paged
+  pdf_document: default
 ---
 
 # Data frame de Iris
@@ -15,7 +15,7 @@ tail(df, 5)
 
 str(df)
 names(df) #colnames
-rownames(df)
+rownames(df) 
 dimnames(df)
 
 dim(df)
@@ -29,7 +29,7 @@ df$Species[1:10]
 ```{r}
 df[1:10, ]
 df[1:10, 2:4]
-df[df$Species == "setosa" & df$Sepal.Width> 4, ]
-df[df$Species == "setosa" & df$Sepal.Width> 4, ][c(1,3), c(2,5)]
+df[df$Species == "setosa" & df$Sepal.Width > 4, ]
+df[df$Species == "setosa" & df$Sepal.Width > 4, ][c(1,3), c(2,5)]
 ```
 
