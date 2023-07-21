@@ -1,8 +1,10 @@
 ---
 title: "Ejemplo Final"
 author: "Curso de Estadística Descriptiva"
-date: "24/12/2018"
-output: html_document
+date: "21/07/2023"
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 # Ejemplo final

@@ -1,8 +1,10 @@
 ---
 title: "Tablas de Contingencia"
 author: "Curso de Estadística Descriptiva"
-date: "24/12/2018"
-output: html_document
+date: "19/07/2023"
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 # Tablas de contingencia

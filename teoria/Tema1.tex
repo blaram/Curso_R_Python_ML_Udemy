@@ -44,16 +44,19 @@
   \frame{\subsectionpage}
 }
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -84,13 +87,13 @@
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
 \newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
 \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
 \newcommand{\BuiltInTok}[1]{#1}
 \newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
@@ -98,7 +101,7 @@
 \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
 \newcommand{\ExtensionTok}[1]{#1}
 \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\ImportTok}[1]{#1}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
@@ -107,7 +110,7 @@
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
 \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
@@ -142,7 +145,7 @@
 \fi
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
 \hypersetup{
   pdftitle={Tema 1 - Trabajando con R},
   pdfauthor={Juan Gabriel Gomila \& María Santos},
@@ -291,9 +294,9 @@ calculadora}\label{utilizando-r-como-calculadora}}
 \begin{frame}[fragile]{Calculadora básica - Operaciones}
 \protect\hypertarget{calculadora-buxe1sica---operaciones}{}
 \begin{longtable}[]{@{}ll@{}}
-\toprule()
+\toprule\noalign{}
 Código & Operación \\
-\midrule()
+\midrule\noalign{}
 \endhead
 \texttt{+} & Suma \\
 \texttt{-} & Resta \\
@@ -302,23 +305,23 @@ Código & Operación \\
 \texttt{\^{}} & Potencia \\
 \texttt{\%/\%} & Cociente entero \\
 \texttt{\%\%} & Resto de división entera \\
-\bottomrule()
+\bottomrule\noalign{}
 \end{longtable}
 \end{frame}
 
 \begin{frame}[fragile]{Calculadora básica - Operaciones}
 \protect\hypertarget{calculadora-buxe1sica---operaciones-1}{}
 \begin{longtable}[]{@{}ll@{}}
-\toprule()
+\toprule\noalign{}
 Código & Significado \\
-\midrule()
+\midrule\noalign{}
 \endhead
 \texttt{pi} & \href{https://es.wikipedia.org/wiki/Número_π}{\(\pi\)} \\
 \texttt{Inf} &
 \href{https://es.wikipedia.org/wiki/Infinito}{\(\infty\)} \\
 \texttt{NaN} & Indeterminación (Not a Number) \\
 \texttt{NA} & Valor desconocido (Not Available) \\
-\bottomrule()
+\bottomrule\noalign{}
 \end{longtable}
 \end{frame}
 
@@ -358,9 +361,9 @@ Código & Significado \\
 \begin{frame}[fragile]{Calculadora básica - Funciones}
 \protect\hypertarget{calculadora-buxe1sica---funciones}{}
 \begin{longtable}[]{@{}ll@{}}
-\toprule()
+\toprule\noalign{}
 Código & Función \\
-\midrule()
+\midrule\noalign{}
 \endhead
 \texttt{sqrt(x)} & \(\sqrt{x}\) \\
 \texttt{exp(x)} & \(e^x\) \\
@@ -368,7 +371,7 @@ Código & Función \\
 \texttt{log10(x)} & \(\log_{10}(x)\) \\
 \texttt{log(x,a)} & \(\log_a(x)\) \\
 \texttt{abs(x)} & \(\begin{vmatrix}x\end{vmatrix}\) \\
-\bottomrule()
+\bottomrule\noalign{}
 \end{longtable}
 \end{frame}
 
@@ -418,14 +421,14 @@ Código & Función \\
 \begin{frame}[fragile]{Calculadora básica - Combinatoria}
 \protect\hypertarget{calculadora-buxe1sica---combinatoria}{}
 \begin{longtable}[]{@{}ll@{}}
-\toprule()
+\toprule\noalign{}
 Código & Operación \\
-\midrule()
+\midrule\noalign{}
 \endhead
 \texttt{factorial(x)} &
 \href{https://es.wikipedia.org/wiki/Factorial}{\(x!\)} \\
 \texttt{choose(n,m)} & \(\begin{pmatrix}n\\ m\end{pmatrix}\) \\
-\bottomrule()
+\bottomrule\noalign{}
 \end{longtable}
 
 \vspace{0.2cm}
@@ -519,9 +522,9 @@ que se corresponde con \ldots{}
 \begin{frame}[fragile]{Trigonometría en radianes}
 \protect\hypertarget{trigonometruxeda-en-radianes}{}
 \begin{longtable}[]{@{}ll@{}}
-\toprule()
+\toprule\noalign{}
 Código & Función \\
-\midrule()
+\midrule\noalign{}
 \endhead
 \texttt{sin(x)} & \(\sin(x)\) \\
 \texttt{cos(x)} & \(\cos(x)\) \\
@@ -529,7 +532,7 @@ Código & Función \\
 \texttt{asin(x)} & \(\arcsin(x)\) \\
 \texttt{acos(x)} & \(\arccos(x)\) \\
 \texttt{atan(x)} & \(\arctan(x)\) \\
-\bottomrule()
+\bottomrule\noalign{}
 \end{longtable}
 \end{frame}
 
@@ -596,13 +599,13 @@ Código & Función \\
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2593}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7407}}@{}}
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Código
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Función
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
 \texttt{print(x,n)} & Muestra las \(n\) cifras significativa del número
 \(x\) \\
@@ -614,7 +617,7 @@ resultado o vector numérico \(x\) \\
 \(x\) \\
 \texttt{trunc(x)} & Parte entera de \(x\), eliminando la parte
 decimal \\
-\bottomrule()
+\bottomrule\noalign{}
 \end{longtable}
 \end{frame}
 
@@ -702,13 +705,13 @@ decimal \\
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Código
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Función
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
 \texttt{a+bi} &
 \href{https://es.wikipedia.org/wiki/Número_complejo}{Número complejo} \\
@@ -716,16 +719,16 @@ Función
 binómica \\
 \texttt{complex(modulus=...,argument=...)} & Número complejo en forma
 polar \\
-\bottomrule()
+\bottomrule\noalign{}
 \end{longtable}
 \end{frame}
 
 \begin{frame}[fragile]{Números complejos}
 \protect\hypertarget{nuxfameros-complejos-1}{}
 \begin{longtable}[]{@{}ll@{}}
-\toprule()
+\toprule\noalign{}
 Código & Función \\
-\midrule()
+\midrule\noalign{}
 \endhead
 \texttt{sqrt(as.complex(-x))} & \(\sqrt{-x}\) \\
 \texttt{Re(x)} & Parte real de \(x\) \\
@@ -733,7 +736,7 @@ Código & Función \\
 \texttt{Mod(x)} & Módulo de \(x\) \\
 \texttt{Arg(x)} & Argumento de \(x\) \\
 \texttt{Conj(x)} & Conjugado de \(x\) \\
-\bottomrule()
+\bottomrule\noalign{}
 \end{longtable}
 \end{frame}
 
